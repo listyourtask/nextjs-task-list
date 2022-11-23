@@ -84,7 +84,7 @@ const Login = () => {
               <button type='button' className="mt-3 bg-blue-600 rounded-md p-2 w-5/6" onClick={googleSignIn}>
                 <div className="text-white"><FontAwesomeIcon icon={faGoogle as IconProp} className="pr-2"/>GOOGLE</div>
               </button>
-              <button className="mt-3 bg-blue-600 rounded-md p-2 w-5/6" onClick={fbSignIn}>
+              <button type='button' className="mt-3 bg-blue-600 rounded-md p-2 w-5/6" onClick={fbSignIn}>
                 <div className="text-white"><FontAwesomeIcon icon={faFacebook as IconProp} className="pr-2"/> FACEBOOK</div>
               </button>    
             </div>     
