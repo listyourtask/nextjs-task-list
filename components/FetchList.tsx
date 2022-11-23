@@ -15,7 +15,7 @@ const FetchList = () => {
 
   const handleSave = async() =>{
     try{
-      const colRef = collection(db, user.displayName || user.email)
+      const colRef = collection(db, user.email)
       const snapshots = await getDocs(colRef)
       const docs = snapshots.docs.map(docs => {
         const data = docs.data();
@@ -33,7 +33,7 @@ const FetchList = () => {
   })
 
  const deleteData = async (data) =>{
-  await deleteDoc(doc(db, user.displayName, data.id));
+  await deleteDoc(doc(db,user.email, data.id));
  }
   return (  
     <div className="flex justify-center">

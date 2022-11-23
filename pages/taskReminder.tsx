@@ -19,14 +19,15 @@ const Home: NextPage = () => {
     return<div>Please sign in to continue...</div>
   }
   return (
-    <div className="flex flex-col justify-center bg-slate-800 h-150">
-      <div>
-        <button onClick={() => auth.signOut()} className="bg-red-600 border"> SIGN OUT</button>
-      </div>
-      <div>
+    <div className="bg-slate-800 h-150">
+      <nav className="mt-3 flex justify-between pr-4 pl-2 py-2 ">
+        <p className="border-2 border-transparent border-b-orange-600 text-white text-[15px] relative top-2">USER: {user.email}</p>
+        <button onClick={() => auth.signOut()} className="text-white w-24 h-8 relative border-2 border-transparent border-b-orange-600 top-1"> SIGN OUT</button>
+      </nav>
+      <div className="flex flex-col justify-center">
         <CreateList />
       </div>
-      <div>
+      <div className="flex flex-col justify-center">
         <FetchList />
       </div>
     </div>

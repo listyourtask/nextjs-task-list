@@ -61,8 +61,8 @@ const  SignUp = () => {
           <label className='text-red-500 pl-4'>{errorMessage === '' ? null : <FontAwesomeIcon icon={faXmark} className='pr-2'/>}{errorMessage}</label>
           <div className='pl-4 relative flex flex-col gap-4'>
             <input ref={emailRef} className='text-black outline outline-transparent bg-transparent border-2 border-transparent border-b-orange-500 w-4/5' type='text' placeholder='Email'></input>
-            <input ref={passwordRef} className="text-black outline outline-transparent bg-transparent border-2 border-transparent border-b-orange-500 w-4/5"placeholder="Password" type="text"></input>  
-            <input ref={rePasswordRef} className="text-black outline outline-transparent bg-transparent border-2 border-transparent border-b-orange-500 w-4/5"placeholder="Confirm Password" type="text"></input>
+            <input ref={passwordRef} className="text-black outline outline-transparent bg-transparent border-2 border-transparent border-b-orange-500 w-4/5"placeholder="Password" type="Password"></input>  
+            <input ref={rePasswordRef} className="text-black outline outline-transparent bg-transparent border-2 border-transparent border-b-orange-500 w-4/5"placeholder="Confirm Password" type="Password"></input>
           </div>
           <div className='pl-4 mt-4'>
             <button disabled={loadings} type='button' onClick={handleSignUp}className="text-white h-10 border w-9/12 bg-orange-600">REGISTER</button>
