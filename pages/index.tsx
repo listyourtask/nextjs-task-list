@@ -1,11 +1,15 @@
 import { Router } from "react-router-dom";
 import Navbar from "../components/Navbar"
 import { useRouter } from 'next/router';
-      
+import Head from 'next/head'      
 const Home = () => {
   const router = useRouter()
   return (
     <div>
+      <Head>
+        <title>TASK LIST</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
      <Navbar />
       <div>
         <div className="bg-slate-800 flex flex-col items-center pt-40 pb-20">
