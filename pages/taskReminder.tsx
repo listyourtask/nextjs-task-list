@@ -21,7 +21,7 @@ const Home: NextPage = () => {
   return (
     <div className="flex flex-col justify-center bg-slate-800 h-150">
       <div>
-        <button onClick={() => auth.signOut()} className="bg-blue-200 border"> SIGN OUT</button>
+        <button onClick={() => auth.signOut()} className="bg-red-600 border"> SIGN OUT</button>
       </div>
       <div>
         <CreateList />
