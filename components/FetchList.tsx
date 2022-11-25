@@ -13,12 +13,12 @@ const FetchList = () => {
   const [user, loading] = useAuthState(auth)
 
 
-  const handleSave = async() =>{
+  const handleAdd = async() =>{
     try{
       const colRef = collection(db, user.displayName || user.email)
       const snapshots = await getDocs(colRef)
       const docs = snapshots.docs.map(docs => {
-        const data = docs.data();
+      const data = docs.data();
         data.id = docs.id
         return data
       })
@@ -29,7 +29,7 @@ const FetchList = () => {
     }
   }
   useEffect(() => {  
-    handleSave()
+    handleAdd()
   })
 
  const deleteData = async (data) =>{
