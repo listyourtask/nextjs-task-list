@@ -1,6 +1,6 @@
 import { initFirebase } from "../firebase/firebase";
-import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider} from "firebase/auth";
-import {useAuthState} from 'react-firebase-hooks/auth';
+import { getAuth} from "firebase/auth";
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle, faFacebook } from '@fortawesome/free-brands-svg-icons';
@@ -8,12 +8,11 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { login } from '../firebase/firebase';
 import { useRef, useState } from "react";
 import Navbar from '../components/Navbar'
+import {googleSignIn, fbSignIn} from '../firebase/firebase'
 const Login = () => {
   const app = initFirebase()
   const auth = getAuth();
   const [user,loading] = useAuthState(auth);
-  const provider = new GoogleAuthProvider();
-  const fbProvider = new FacebookAuthProvider();
   const emailRef = useRef(null)
   const passwordRef = useRef(null)
   const router = useRouter()
@@ -27,29 +26,6 @@ const Login = () => {
     console.log(user.displayName);
     return <div>WELCOME {user.email}</div>
   }
-
-  const googleSignIn = async() =>{
-    try{
-      await signInWithPopup(auth, provider);
-      console.log('working')
-    }
-    catch(err){
-
-      if(err){
-        console.log
-      }
-    }
-  }  
-    const fbSignIn = async () =>{
-      try{
-        await signInWithPopup(auth, fbProvider);
-        console.log('working')
-      }
-      catch(err){
-        return false
-      }
-  }
-
   const handleLogin = async() =>{
     setLoad(true)
     try{
