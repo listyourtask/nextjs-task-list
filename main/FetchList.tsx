@@ -41,18 +41,18 @@ const FetchList = () => {
         {
           data.map(data => { 
              return( 
-                <div key={data.id} className='mt-5 w-4/5 grid gap-2 bg-white flex flex-col drop-shadow-2xl border rounded-xl md:w-[350px]'>
+                <div key={data.id} className='mt-5 w-4/5 grid gap-2 bg-white flex flex-col drop-shadow-2xl border rounded-xl md:w-[200px]'>
                   <div className='flex flex-row pt-4'>
                     <dl className='flex flex-col pl-5 gap-2'>
                       <div className="flex flex-row gap-3 items-center">
                         <h2 className="text-lg text-black">ACTIVITY:</h2>
-                        <p className="relative text-sm text-black">{data.toDo === '' ? '?' : data.toDo.toUpperCase()}</p>
+                        <p className={`${data.date === '' ? "text-red-600 text-[20px]": "text-slate-500"} pl-2`}>{data.toDo === '' ? 'null' : data.toDo.toUpperCase()}</p>
                       </div> 
                       <div className="flex flex-row gap-3">
-                        <h2 className="text-lg text-black">DATE:</h2><p className={`${data.date === '' ? "text-red-600": "text-black"} pl-8`}>{data.date === '' ? 'null' : data.date.toUpperCase()}</p>
+                        <h2 className="text-lg text-black">DATE:</h2><p className={`${data.date === '' ? "text-red-600 text-[20px]": "text-black"} pl-8`}>{data.date === '' ? 'null' : data.date.toUpperCase()}</p>
                       </div> 
                       <div className="flex flex-row gap-3">
-                        <h2 className="text-lg text-black">TIME:</h2><p className={`${data.date === '' ? "text-red-600": "text-slate-500"} pl-8`}>{data.time === '' ? 'null' : data.time.toUpperCase()}</p>
+                        <h2 className="text-lg text-black">TIME:</h2><p className={`${data.date === '' ? "text-red-600 text-[20px]": "text-slate-500"} pl-8`}>{data.time === '' ? 'null' : data.time.toUpperCase()}</p>
                       </div> 
                     </dl>
                   </div>

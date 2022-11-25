@@ -1,11 +1,11 @@
-import CreateList from "../components/AddList"
+import CreateList from "../main/AddList"
 import {NextPage} from 'next'
 import { getAuth } from "firebase/auth";
 import {useAuthState} from 'react-firebase-hooks/auth';
 import { useRouter } from "next/router";
 import { initFirebase } from "../firebase/firebase";
 import Navbar from "../components/Navbar";
-import FetchList from "../components/FetchList";
+import FetchList from "../main/FetchList";
 const Home: NextPage = () => {
   const app = initFirebase()
   const auth = getAuth();
